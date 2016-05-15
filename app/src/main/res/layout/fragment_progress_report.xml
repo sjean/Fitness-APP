@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/report1"
+    tools:context="com.example.hp.health.Fragment.ProgressReport">
+
+
+    <LinearLayout
+        android:id="@+id/healthy"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right|center_vertical"
+        android:weightSum="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Please Input date"
+                android:text="2016-04-28"
+                android:inputType="date"
+                android:gravity="center_horizontal"
+                android:id="@+id/reportdate"
+                android:textColor="#4A4AFF"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="weekly"
+                android:id="@+id/week"
+                android:textColor="#4A4AFF"
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/confirm"
+                android:id="@+id/confirmDaily"
+                android:textColor="#4A4AFF"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2"
+            android:layout_height="match_parent">
+            <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="match_parent"
+                android:id="@+id/barChart"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"/>
+            <com.github.mikephil.charting.charts.LineChart
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_weight="1"
+                android:id="@+id/lineChart"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

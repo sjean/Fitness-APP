@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.hp.health.Fragment.Home">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/linearLayout">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:textSize="25dp"
+                android:textColor="#2894FF"
+                android:layout_marginLeft="25dp"
+                android:textAlignment="gravity"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="3"
+                android:id="@+id/name"
+                 />
+        </LinearLayout>
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker2"
+            android:layout_gravity="center_horizontal" />
+
+
+    </LinearLayout>
+
+</FrameLayout>

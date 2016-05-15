@@ -1,0 +1,112 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 221216 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:328), pid=89924, tid=71548
+#
+# JRE version: 7.0_25-b17
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (23.25-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000008af1000):  JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=71548, stack(0x000000000a1b0000,0x000000000a2b0000)]
+
+Stack: [0x000000000a1b0000,0x000000000a2b0000]
+
+Current CompileTask:
+C2:   1294   82             com.android.dx.ssa.SsaMethod::computeReachability (131 bytes)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000000a5eb800 JavaThread "pool-2-thread-4" [_thread_blocked, id=90540, stack(0x000000000acb0000,0x000000000adb0000)]
+  0x000000000a5e7000 JavaThread "pool-2-thread-3" [_thread_in_Java, id=90512, stack(0x000000000abb0000,0x000000000acb0000)]
+  0x000000000a641000 JavaThread "pool-2-thread-2" [_thread_in_Java, id=90448, stack(0x000000000aab0000,0x000000000abb0000)]
+  0x000000000a640000 JavaThread "pool-3-thread-1" [_thread_blocked, id=90452, stack(0x000000000a9b0000,0x000000000aab0000)]
+  0x000000000a548000 JavaThread "pool-2-thread-1" [_thread_blocked, id=90456, stack(0x000000000a8b0000,0x000000000a9b0000)]
+  0x0000000008af9000 JavaThread "Service Thread" daemon [_thread_blocked, id=89620, stack(0x000000000a2b0000,0x000000000a3b0000)]
+=>0x0000000008af1000 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=71548, stack(0x000000000a1b0000,0x000000000a2b0000)]
+  0x0000000008ae7000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=12108, stack(0x000000000a0b0000,0x000000000a1b0000)]
+  0x0000000008ae6000 JavaThread "Attach Listener" daemon [_thread_blocked, id=50660, stack(0x0000000009fb0000,0x000000000a0b0000)]
+  0x0000000008ae3000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=89732, stack(0x0000000009eb0000,0x0000000009fb0000)]
+  0x0000000008a52800 JavaThread "Finalizer" daemon [_thread_blocked, id=89588, stack(0x0000000009db0000,0x0000000009eb0000)]
+  0x0000000008a4f000 JavaThread "Reference Handler" daemon [_thread_blocked, id=89568, stack(0x0000000009cb0000,0x0000000009db0000)]
+  0x00000000024ee000 JavaThread "main" [_thread_in_Java, id=90332, stack(0x0000000002370000,0x0000000002470000)]
+
+Other Threads:
+  0x0000000008a46800 VMThread [stack: 0x0000000009bb0000,0x0000000009cb0000] [id=87300]
+  0x0000000008b40800 WatcherThread [stack: 0x000000000a3b0000,0x000000000a4b0000] [id=90444]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 76288K, used 17018K [0x00000000eaab0000, 0x00000000effd0000, 0x0000000100000000)
+  eden space 65408K, 26% used [0x00000000eaab0000,0x00000000ebb4e9a0,0x00000000eea90000)
+  from space 10880K, 0% used [0x00000000ef530000,0x00000000ef530000,0x00000000effd0000)
+  to   space 10880K, 0% used [0x00000000eea90000,0x00000000eea90000,0x00000000ef530000)
+ ParOldGen       total 174336K, used 0K [0x00000000c0000000, 0x00000000caa40000, 0x00000000eaab0000)
+  object space 174336K, 0% used [0x00000000c0000000,0x00000000c0000000,0x00000000caa40000)
+ PSPermGen       total 21248K, used 5796K [0x00000000bae00000, 0x00000000bc2c0000, 0x00000000c0000000)
+  object space 21248K, 27% used [0x00000000bae00000,0x00000000bb3a9070,0x00000000bc2c0000)
+
+Card table byte_map: [0x00000000056b0000,0x00000000058e0000] byte_map_base: 0x00000000050d9000
+
+Polling page: 0x00000000001f0000
+
+Code Cache  [0x00000000025f0000, 0x0000000002860000, 0x00000000055f0000)
+ total_blobs=318 nmethods=81 adapters=188 free_code_cache=48646Kb largest_free_block=49791040
+
+Compilation events (10 events):
+Event: 0.967 Thread 0x0000000008af1000   78             com.android.dx.ssa.NormalSsaInsn::getOpcode (8 bytes)
+Event: 0.967 Thread 0x0000000008af1000 nmethod 78 0x000000000266d310 code [0x000000000266d440, 0x000000000266d4b8]
+Event: 0.970 Thread 0x0000000008ae7000   79             com.android.dx.rop.code.BasicBlockList::get (9 bytes)
+Event: 0.970 Thread 0x0000000008ae7000 nmethod 79 0x000000000266f3d0 code [0x000000000266f520, 0x000000000266f5d8]
+Event: 0.974 Thread 0x0000000008af1000   80             com.android.dx.ssa.SsaRenamer$BlockRenamer::addMapping (143 bytes)
+Event: 0.980 Thread 0x0000000008af1000 nmethod 80 0x000000000266e6d0 code [0x000000000266e840, 0x000000000266ee58]
+Event: 0.984 Thread 0x0000000008ae7000   81             com.android.dx.cf.code.Ropper::labelToResultIndex (47 bytes)
+Event: 0.987 Thread 0x0000000008ae7000 nmethod 81 0x000000000266e190 code [0x000000000266e2e0, 0x000000000266e558]
+Event: 1.288 Thread 0x0000000008af1000   82             com.android.dx.ssa.SsaMethod::computeReachability (131 bytes)
+Event: 1.291 Thread 0x0000000008ae7000   83             com.android.dx.rop.code.RopMethod::calcPredecessors (227 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (1 events):
+Event: 1.034 Thread 0x000000000a5e7000 Uncommon trap -12 fr.pc 0x000000000266eda0
+
+Internal exceptions (10 events):
+Event: 0.645 Thread 0x000000000a548000 Threw 0x00000000eb3379e0 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.645 Thread 0x000000000a548000 Threw 0x00000000eb33d9e0 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.646 Thread 0x00000000024ee000 Threw 0x00000000eb1e0e48 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.647 Thread 0x00000000024ee000 Threw 0x00000000eb1e6ad8 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.647 Thread 0x00000000024ee000 Threw 0x00000000eb1ec958 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.649 Thread 0x00000000024ee000 Threw 0x00000000eb1f63a0 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.651 Thread 0x00000000024ee000 Threw 0x00000000eb1fd198 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.719 Thread 0x000000000a641000 Threw 0x00000000eb68de80 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 0.916 Thread 0x000000000a641000 Threw 0x00000000eb6e6768 at C:\jdk7u2_64p\jdk7u25\hotspot\src\share\vm\prims\jvm.cpp:1235
+Event: 1.034 Thread 0x000000000a5e7000 Implicit null exception at 0x000000000266ea37 to 0x000000000266ed89
+
+Events (10 events):
+Event: 0.655 loading class 0x0000000008a62090
+Event: 0.655 loading class 0x0000000008a62090 done
+Event: 0.655 loading class 0x0000000008a793c0
+Event: 0.656 loading class 0x0000000008a793c0 done
+Event: 0.719 
